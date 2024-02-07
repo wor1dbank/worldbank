@@ -1,0 +1,76 @@
+
+{% load  static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Worldbank Registration Confirmation</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    /* Add your custom styles for the email here */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        background-color: #f3f3f3;
+        padding: 20px;
+    }
+
+    .logo {
+        max-width: 150px;
+        height: auto;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .footer {
+        background-color: #f3f3f3;
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+</style>
+</head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow" style="max-width: 400px;">
+                    <div class="header">
+                        <img class="card-img-top" src="{% static 'img/logo-wb-header-en.svg' %}" alt="Company Logo" class="logo">
+                    </div>
+                    <div class="card-body">
+                        
+                        <div class="content">
+                            <h4>Hi {{ user.first_name }},</h4>
+                            <p style="font-weight: bold; color: rgb(6, 10, 10);">Please visit the following URL in your browser to confirm your
+                                registration:</p>
+                            <p>http://{{ domain }}{% url 'activate' uidb64=uid token=token %}</p>
+                            <p>NOTE <span style="text-decoration: underline; color: red;">This link will expire in 60 minutes</span></p>
+                            <p>If you think it's not you, please ignore this email.</p>
+                        </div>
+                        <div class="footer">
+                            <p>Contact us: contact@example.com | Phone: +123456789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

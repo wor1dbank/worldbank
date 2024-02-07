@@ -1,0 +1,220 @@
+{% load  static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>FormWizard_v1</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static  'form/fonts/material-design-iconic-font/css/material-design-iconic-font.css' %}">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static  'form/css/style.css' %}">
+	</head>
+	<body>
+
+		<div class="wrapper"  style="background-color: rgb(53, 116, 175);">
+            <form action="" id="wizard"  method="post">{% csrf_token %}
+        		<!-- SECTION 1 -->
+                <h2></h2>
+                <section>
+                    <div class="inner">
+						<div class="image-holder">
+							<img src="{% static  'form/images/w2.jpg' %}" alt="">
+						</div>
+						<div class="form-content" >
+							<div class="form-header">
+							<h3>step1</h3>
+							</div>
+							<p>Please fill with your details to  complete  profile</p>
+							<div class="form-row">
+								<div class="form-holder">
+									<input type="text" name="fname" placeholder="fname" value="{{fname}}" class="form-control" readonly >
+								</div>
+								<div class="form-holder">
+									<input type="text" name="lname" placeholder="lname"  value="{{lname}}" class="form-control" readonly>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-holder">
+									<input type="text" name="phone" placeholder="Phone number" class="form-control">
+								</div>
+								<div class="form-holder">
+									<input type="text" name="e" placeholder="Educaton level" class="form-control">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-holder">
+									<input type="text" name="age" placeholder="Age" class="form-control">
+								</div>
+								<div class="form-holder" style="align-self: flex-end; transform: translateY(4px);">
+									<div class="checkbox-tick">
+										<label class="male">
+											<input type="radio" name="g" value="male" checked> Male<br>
+											<span class="checkmark"></span>
+										</label>
+										<label class="female">
+											<input type="radio" name="g" value="female"> Female<br>
+											<span class="checkmark"></span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="checkbox-circle">
+								<label>
+									<input type="checkbox" checked> We do not share your information with any third parties
+									<span class="checkmark"></span>
+								</label>
+							</div>
+						</div>
+					</div>
+                </section>
+
+				<!-- SECTION 2 -->
+                <h2></h2>
+                <section>
+                    <div class="inner">
+						<div class="image-holder">
+							<img src="{% static  'form/images/w1.jpg' %}" alt="">
+						</div>
+						<div class="form-content">
+							<div class="form-header">
+							<h3>step 2</h3>
+							</div>
+							<p>Please fill with additional info</p>
+							<div class="form-row">
+								<div class="form-holder w-100">
+									<input name="a" type="text" placeholder="Address" class="form-control">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-holder">
+									<input name="city" type="text" placeholder="City" class="form-control">
+								</div>
+								<div class="form-holder">
+									<input type="text" name="z" placeholder="Zip Code" class="form-control">
+								</div>
+							</div>
+
+								<div class="form-row">
+									<div class="form-holder">
+										<input type="text" name="country" placeholder="Country" class="form-control">
+									</div>
+									
+								</div>
+
+						
+						</div>
+					</div>
+                </section>
+
+                <!-- SECTION 3 -->
+                <h2></h2>
+                <section>
+                    <div class="inner">
+						<div class="image-holder">
+							<img src="{% static  'form/images/w3.jpg' %}" alt="">
+						</div>
+						<div class="form-content">
+							<div class="form-header">
+							<h3>step 3</h3>
+								
+							</div>
+							<p>You  are Almost  There</p>
+								<div class="form-row">
+									<div class="form-holder" style="text-align: center; margin: auto;">
+										<p>Click  Submit  and  fill in your  card  details  to  connect  your  profile  to  the  bank</p>
+
+									</div>
+								
+								</div>
+							
+						</div>
+					</div>
+                </section>
+				<!-- SECTION 3 -->
+				<h2></h2>
+				<section>
+					<div class="inner">
+						<div class="image-holder">
+							<img src="{% static  'form/images/w3.jpg' %}" alt="">
+						</div>
+						<div class="form-content">
+							<div class="form-header">
+								<h3>Final Step</h3>
+				
+							</div>
+														<p>Click Submit to complete your profile.</p>
+
+							<div class="form-row">
+								<div class="form-holder" style="text-align: center; margin: auto;">
+									<input type="submit" value="Submit" class="submit-btn">
+								</div>
+							</div>
+				
+						</div>
+					</div>
+				</section>
+
+
+			
+            </form>
+		</div>
+
+		<!-- JQUERY -->
+		<script src="{% static  'form/js/jquery-3.3.1.min.js' %}"></script>
+
+		<!-- JQUERY STEP -->
+		<script src="{% static  'form/js/jquery.steps.js' %}"></script>
+		<script>
+			$(function () {
+					$("#wizard").steps({
+						headerTag: "h2",
+						bodyTag: "section",
+						transitionEffect: "fade",
+						enableAllSteps: true,
+						transitionEffectSpeed: 500,
+						labels: {
+							
+							next: "Next",
+							previous: "Back"
+						}
+					});
+					$('.wizard > .steps li a').click(function () {
+						$(this).parent().addClass('checked');
+						$(this).parent().prevAll().addClass('checked');
+						$(this).parent().nextAll().removeClass('checked');
+					});
+					// Custome Jquery Step Button
+					$('.forward').click(function () {
+						$("#wizard").steps('next');
+					})
+					$('.backward').click(function () {
+						$("#wizard").steps('previous');
+					})
+					// Select Dropdown
+
+
+					
+					$('html').click(function () {
+						$('.select .dropdown').hide();
+					});
+					$('.select').click(function (event) {
+						event.stopPropagation();
+					});
+					$('.select .select-control').click(function () {
+						$(this).parent().next().toggle();
+					})
+					$('.select .dropdown li').click(function () {
+						$(this).parent().toggle();
+						var text = $(this).attr('rel');
+						$(this).parent().prev().find('div').text(text);
+					})
+				})
+
+		</script>
+		
+</body>
+</html>

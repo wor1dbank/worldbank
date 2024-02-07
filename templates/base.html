@@ -1,0 +1,225 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand-sm navbar-light shadow">
+            <a class="navbar-brand" href="#">
+              <img
+                src="{% static 'img/logo-wb-header-en.svg' %}"
+                alt="Logo"
+                style="max-height: 30px"
+              />
+              <!-- Replace 'path_to_your_logo' with your logo image -->
+            </a>
+            <div class="collapse navbar-collapse justify-content-center">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" style="color: rgb(37, 37, 145)" href="#"
+                    >who we are</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: rgb(37, 37, 145)" href="#"
+                    >what we do</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: rgb(37, 37, 145)" href="#"
+                    >where we work</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: rgb(37, 37, 145)" href="#"
+                    >understand poverty</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: rgb(37, 37, 145)" href="#"
+                    >work with us</a
+                  >
+                </li>
+              </ul>
+            </div>
+            {% if  request.user.is_authenticated %}
+              <div class="ml-auto">
+                <button class="btn signup-btn">
+                  <a href="" style="
+                                  text-decoration: none;
+                                  text-transform: capitalize;
+                                  color: white;
+                                ">Account: {{user.first_name}}</a>
+                </button>
+                <button class="btn login-btn">
+                  <a href="{% url 'logout' %}" style="
+                                  text-decoration: none;
+                                  text-transform: capitalize;
+                                  color: white;
+                                ">Logout</a>
+                </button>
+              </div>
+              {% else %}
+            <div class="ml-auto">
+              <button class="btn signup-btn">
+                <a
+                  href="{% url 'register' %}"
+                  style="
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    color: white;
+                  "
+                  >Signup</a
+                >
+              </button>
+              <button class="btn login-btn">
+                <a
+                  href="{% url 'login' %}"
+                  style="
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    color: white;
+                  "
+                  >Login</a
+                >
+              </button>
+            </div>
+            {% endif %}
+          </nav>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <div class="main" style="min-height: 100vh; height: 100%;">
+      {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+      <div class="d-flex flex-column h-100">
+        <!-- FOR DEMO PURPOSE -->
+        <section class="hero text-white py-5 flex-grow-1">
+          <div class="container py-4">
+            <div class="row">
+              <div class="col-lg-6">
+                <h1 class="display-4">Bootstrap footer bottom</h1>
+                <p class="fst-italic text-muted">
+                  Using Bootstrap 5 flexbox utilities, create a footer that
+                  always sticks to the bottom of your viewport. Snippet by
+                  <a
+                    class="text-primary"
+                    href="https://bootstrapious.com/"
+                    target="_blank"
+                    >Bootstrapious</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="w-100 py-4 flex-shrink-0">
+          <div class="container py-4">
+            <div class="row gy-4 gx-5">
+              <div class="col-lg-4 col-md-6">
+                <h5 class="h1 text-white">FB.</h5>
+                <p class="small text-muted">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt.
+                </p>
+                <p class="small text-muted mb-0">
+                  &copy; Copyrights. All rights reserved.
+                  <a class="text-primary" href="#">Bootstrapious.com</a>
+                </p>
+              </div>
+              <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Quick links</h5>
+                <ul class="list-unstyled text-muted">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Get started</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Quick links</h5>
+                <ul class="list-unstyled text-muted">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Get started</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <h5 class="text-white mb-3">Newsletter</h5>
+                <p class="small text-muted">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt.
+                </p>
+                <form action="#">
+                  <div class="input-group mb-3">
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Recipient's username"
+                      aria-label="Recipient's username"
+                      aria-describedby="button-addon2"
+                    />
+                    <button
+                      class="btn btn-primary"
+                      id="button-addon2"
+                      type="button"
+                    >
+                      <i class="fa fa-paper-plane"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

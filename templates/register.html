@@ -1,0 +1,102 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}" />
+<div class="container" style="margin-top: -30px">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card border-0 shadow rounded-3 my-5">
+        <div class="card-body p-4 p-sm-5">
+          <h5 class="card-title text-center mb-2 fw-light fs-5">
+            <img src="{% static 'img/logo-wb-header-en.svg' %}" alt="" />
+            <br />
+            Sign UP
+          </h5>
+
+          <form method="post">
+            {% csrf_token %}
+            <div class="form-floating mb-3">
+              <label for="floatingInput">fname</label>
+
+              <input
+                type="text"
+                required
+                class="form-control"
+                name="fname"
+                style="background: white"
+                id="floatingInput"
+                placeholder="name@example.com"
+              />
+            </div>
+            <div class="form-floating mb-3">
+              <label for="floatingInput">l name</label>
+
+              <input
+                type="text"
+                class="form-control"
+                name="lname"
+                required
+
+                style="background: white"
+                id="floatingInput"
+                placeholder="name@example.com"
+              />
+            </div>
+
+            <div class="form-floating mb-3">
+              <label for="floatingInput">Email address</label>
+
+              <input
+                type="email"
+                class="form-control"
+                required
+                name="email"
+                style="background: white"
+                id="floatingInput"
+                placeholder="name@example.com"
+              />
+            </div>
+        
+            <div class="form-floating mb-3">
+              <label for="floatingPassword">Password</label>
+              <input
+                type="password"
+                required
+                name="password"
+                class="form-control"
+                style="background: white"
+                id="floatingPassword"
+                placeholder="Password"
+              />
+            </div>
+
+            <div class="form-check mb-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                required
+                value=""
+                id="rememberPasswordCheck"
+              />
+              <label class="form-check-label" for="rememberPasswordCheck">
+                <a href="https://www.worldbank.org/en/programs/solutionstooverfishing/official-terms-and-conditions#:~:text=The%20World%20Bank%20disclaims%20any,against%20any%20third%2Dparty%20claims.">By Signing up you agree to our terms</a>
+              </label>
+            </div>
+            <div class="d-grid">
+              <button
+                class="btn btn-primary btn-login text-uppercase fw-bold"
+                type="submit"
+              >
+                Sign up
+              </button>
+            </div>
+            <hr class="my-4" />
+
+            <div class="d-grid">
+              <p>Already a member? <a href="">login</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

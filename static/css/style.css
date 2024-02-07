@@ -1,0 +1,103 @@
+.navbar {
+  background-color: #fff; /* Background color for the navbar */
+}
+
+.navbar a {
+  text-transform: uppercase; /* Uppercase text for links */
+  color: blue; /* Default color for links */
+  font-weight: bold;
+  transition: color 0.3s, text-decoration 0.3s; /* Smooth transition on hover */
+}
+
+.navbar a:hover {
+  color: rgb(240, 7, 7); /* Color change on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+.signup-btn {
+  background-color: red; /* Red signup button */
+  color: white;
+}
+
+.login-btn {
+  background-color: blue; /* Blue login button */
+  color: white;
+}
+
+.custom-jumbotron {
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  display: block;
+}
+
+.text-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff; /* Text color */
+  padding: 20px; /* Add padding as needed */
+}
+
+.text-content h1,
+.text-content p,
+.text-content a {
+  margin: 10px 0; /* Adjust margins as needed */
+}
+
+@media (max-width: 767px) {
+  .text-content {
+    display: block;
+    background-color: #333; /* Dark background color */
+  }
+  .container2 {
+    margin-top: 340px;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-content {
+    top: 30%; /* Adjust the value as needed to move the content downward */
+  }
+
+  .image-container img {
+    display: block;
+  }
+}
+
+.darken-image {
+  filter: brightness(
+    70%
+  ); /* Adjust the percentage to control the darkness (e.g., 70% - darker, 100% - original) */
+}
+
+/* footer */
+
+footer {
+  background: #2a2e32;
+}
+
+.text-small {
+  font-size: 0.9rem;
+}
+
+.form-control {
+  background: #212529;
+  border-color: #545454;
+}
+
+.form-control:focus {
+  background: #212529;
+}
+
+footer {
+  background: #212529;
+}

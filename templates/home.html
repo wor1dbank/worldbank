@@ -1,0 +1,117 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container">
+  <div class="d-md-none">
+    <img
+      src="{% static 'img/img.png' %}"
+      alt="Background Image"
+      class="img-fluid"
+    />
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="custom-jumbotron">
+        <div class="image-container d-none d-md-block">
+          <img
+            src="{% static 'img/img.png' %}"
+            alt="Background Image"
+            class="img-fluid darken-image"
+          />
+        </div>
+        <div class="text-content">
+          <h4 class="" style="text-decoration: underline; font-weight: bold">
+            "A world free of poverty on a livable planet."
+          </h4>
+          <p class="lead">
+            A landmark speech by Ajay Banga on our ambitious new vision. One
+            challenge cannot be solved without solving the others. They demand
+            an expanded vision of the World Bank.
+          </p>
+          <hr class="my-2" />
+          <p class="lead">
+            <a
+              class="btn btn-primary btn-sm"
+              href="Jumbo action link"
+              role="button"
+              >WATCH SPEECH</a
+            >
+            <a
+              class="btn btn-light btn-sm"
+              href="Jumbo action link"
+              role="button"
+              >READ SPEECH</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container container2">
+  <div class="row mt-4">
+    <div class="col-md-4 mt-2">
+      <div class="card shadow" style="background-color: rgb(224, 220, 220)">
+        <img class="card-img-top" src="{% static 'img/1.jpg' %}" alt="" />
+        <div class="card-body">
+          <p class="card-text">THE BIGGER PICTURE</p>
+          <h4 class="card-title" style="font-weight: bold">
+            Restoring Dignity and Livelihoods in Madagascar’s Grand Sud
+          </h4>
+          <p class="card-text">
+            Explore how the International Development Association (IDA) is
+            funding successful programs in Southern Madagascar, focusing on
+            holistic development with the opinions and skills of the local
+            communities to build local, sustainable solutions to development
+            issues.
+          </p>
+          <a href="">learn more</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-2">
+      <div class="card shadow" style="background-color: rgb(224, 220, 220)">
+        <img class="card-img-top" src="{% static 'img/2.png' %}" alt="" />
+        <div class="card-body">
+          <p class="card-text">THE DEVELOPMENT PODCAST</p>
+          <h4 class="card-title" style="font-weight: bold">
+            Podcast: New Vision for Challenging Times
+          </h4>
+          <p class="card-text">
+            In this special edition episode of The Development Podcast, we draw
+            on some of the highlights from the 2023 World Bank-IMF Annual
+            Meetings and share more about the institution’s new mission and
+            vision.
+          </p>
+          <a href="">learn more</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mt-2">
+      <div class="card shadow" style="background-color: rgb(224, 220, 220)">
+        <img class="card-img-top" src="{% static 'img/3.png' %}" alt="" />
+        <div class="card-body">
+          <p class="card-text">NEW REPORT</p>
+          <h4 class="card-title" style="font-weight: bold">
+            Commodity Markets Outlook Report
+          </h4>
+          <p class="card-text">
+            This latest report signals that commodity markets could face “dual
+            energy shock” for the first time in decades—with potential
+            disruption not just from the war in Ukraine but also from the
+            Mideast conflict. Dual conflicts could result in an energy-market
+            turmoil that may intensify food insecurity.
+          </p>
+          <a href="">learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
